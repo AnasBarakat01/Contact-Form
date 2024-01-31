@@ -3,7 +3,8 @@
 [Introduction](#Introduction)          
 [Definition](#Definition)                 
 [Advantages](#Advantages)    
-[Steps](#Steos)        
+[Steps](#Steos)  
+[Installation](#Installation)
 
 
 
@@ -38,7 +39,24 @@ any other purposes. Example:
 
 ## Steps       
 Here are the steps to create Contact-Form using **PHP** and **Laravel** framework.     
-### 1 - Migration 
+### 1 - Migration    
+I used migration ,provided from Laravel, to create the table of the Contact-Form in the database.     
+As you can see I created table clled "contacts". This table will include the emails sent through this form.    
+#### Why do I use migration ?     
+* If some other developer will be working on your script by taking a pull, You don’t have to send him or her the SQL files to import the db.    
+* It gives efficient results when we work in a team.              
+* One of the most important things that I love about migration is that it has very simple methods (anyone can understand easily) to handle table creation and modification.      
+* It’s kind of flexible anytime you can modify your table just by writing a few lines. Like, I want to update the column name then I don’t have to do go to the manual or change the name. No! Just do the below thing.
+
+Use the following command to create the migration `php artisan make:migration create_contacts_table`    
+  
 
 
+
+
+
+
+## installation
+
+1. create the migration `php artisan make:migration create_contacts_table`   
 
