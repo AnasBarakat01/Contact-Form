@@ -42,6 +42,7 @@ Here are the steps to create Contact-Form using **PHP** and **Laravel** framewor
 ### 1 - Migration    
 I used migration ,provided from Laravel, to create the table of the Contact-Form in the database.     
 As you can see I created table clled "contacts". This table will include the emails sent through this form.    
+Four columns in this table id, name, email, subject and message.     
 #### Why do I use migration ?     
 * If some other developer will be working on your script by taking a pull, You don’t have to send him or her the SQL files to import the db.    
 * It gives efficient results when we work in a team.              
@@ -49,6 +50,9 @@ As you can see I created table clled "contacts". This table will include the ema
 * It’s kind of flexible anytime you can modify your table just by writing a few lines. Like, I want to update the column name then I don’t have to do go to the manual or change the name. No! Just do the below thing.
 
 Use the following command to create the migration `php artisan make:migration create_contacts_table`    
+
+### 2 - Model     
+
   
 
 
