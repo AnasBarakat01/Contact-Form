@@ -41,7 +41,7 @@ any other purposes. Example:
 Here are the steps to create Contact-Form using **PHP** and **Laravel** framework.     
 ### 1 - Migration    
 I used migration ,provided from Laravel, to create the table of the Contact-Form in the database.     
-As you can see I created table clled "contacts". This table will include the emails sent through this form.    
+As you can see I created table clled "contacts". This table will include the emails sent ,to website owners, through this form.    
 Four columns in this table id, name, email, subject and message.     
 #### Why do I use migration ?     
 * If some other developer will be working on your script by taking a pull, You don’t have to send him or her the SQL files to import the db.    
@@ -52,16 +52,29 @@ Four columns in this table id, name, email, subject and message.
 Use the following command to create the migration `php artisan make:migration create_contacts_table`    
 
 ### 2 - Model     
-I use the “Contact" model to put data in the database, as we know Laravel is a MVC framework. In this model I determine columns names of the table in database that I will fill in the "fillable" variable.             
+I use the “Contact" model to put data in the database, as we know Laravel is a MVC framework. In this model I determine columns names of the table in database that I will fill in the "fillable" variable.      
+Use the following command to create the model  `php artisan make:model Contact`
 The most important thing I wanna talk about is the "boot()" function, which is automatically executed when calling this model. So, it is a suitable place to put a behavior, so it will contain the code of sending the email     
 ` Mail::to($adminEmail)->send(new ContactMail($item)); `
 
 #### Mail class
 Is an email API powered by the popular Symfony Mailer component provided from Laravel. Provide drivers for sending email via SMTP, Mailgun, Postmark, Amazon SES, and sendmail, allowing you to quickly get started sending mail through a local or cloud-based service of your choice.        
-Through this class I use "to()" function , which sends a mail. In the "to()" function I determine name of the destination email address. Then I use "send()" which takes a Mailable object as I discuss later.          
+Through this class I use "to()" function , which sends a mail. In the "to()" function I determine name of the destination email address. Then I use "send()" which takes a Mailable object as I discuss later which represents the message that will be sent.             
 _Note :_ you can configure your data of sending eamils through **config/mail.php** file. You will find a "mailers" configuration array. This array contains a sample configuration entry for each of the major mail drivers / transports supported by Laravel, while the default configuration value determines which mailer will be used by "default" when your application needs to send an email message.
 
 ### 3 - Mailable class
+Represents the message that will be sent in the email. A built-in class provided from laravel.     
+Use the following command to create it  `php artisan make:mail ContactMail`       
+#### So, how can you configure this class (message) that will be sent ?
+* **constructor** to to include the data that will be sent to the website owners (name, email, phone, message,..).  
+* **envelope()** function to determine name of the sender and subject of the message.
+* **content()** fucntion to determine the view file that will be sent of extension '.blade.php'.
+* or use the **build()** function to determine the previous attributes.     
+
+### 4 - view file
+
+
+
 
 
 
@@ -75,5 +88,7 @@ _Note :_ you can configure your data of sending eamils through **config/mail.php
 
 ## installation
 
-1. create the migration `php artisan make:migration create_contacts_table`   
+1. create the migration `php artisan make:migration create_contacts_table`
+2. create the model `php artisan make:model Contact`
+3. create the mailable class  `php artisan make:mail ContactMail`  
 
