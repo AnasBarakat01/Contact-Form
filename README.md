@@ -58,9 +58,11 @@ The most important thing I wanna talk about is the "boot()" function, which is a
 
 #### Mail class
 Is an email API powered by the popular Symfony Mailer component provided from Laravel. Provide drivers for sending email via SMTP, Mailgun, Postmark, Amazon SES, and sendmail, allowing you to quickly get started sending mail through a local or cloud-based service of your choice.        
-Through this class I use "to()" function , which sends a mail. In the "to()" function I determine name of the destination email address. Then I use "send()" which takes a Mailable object as I discuss later.
+Through this class I use "to()" function , which sends a mail. In the "to()" function I determine name of the destination email address. Then I use "send()" which takes a Mailable object as I discuss later.          
+_Note :_ you can configure your data of sending eamils through **config/mail.php** file. You will find a "mailers" configuration array. This array contains a sample configuration entry for each of the major mail drivers / transports supported by Laravel, while the default configuration value determines which mailer will be used by "default" when your application needs to send an email message.
 
-#### Mailable class
+### 3 - Mailable class
+
 
 
 
