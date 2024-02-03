@@ -52,8 +52,19 @@ Four columns in this table id, name, email, subject and message.
 Use the following command to create the migration `php artisan make:migration create_contacts_table`    
 
 ### 2 - Model     
+I use the “Contact" model to put data in the database, as we know Laravel is a MVC framework. In this model I determine columns names of the table in database that I will fill in the "fillable" variable.             
+The most important thing I wanna talk about is the "boot()" function, which is automatically executed when calling this model. So, it is a suitable place to put a behavior, so it will contain the code of sending the email     
+` Mail::to($adminEmail)->send(new ContactMail($item)); `
 
-  
+#### Mail class
+Is an email API powered by the popular Symfony Mailer component provided from Laravel. Provide drivers for sending email via SMTP, Mailgun, Postmark, Amazon SES, and sendmail, allowing you to quickly get started sending mail through a local or cloud-based service of your choice.        
+Through this class I use "to()" function , which sends a mail. In the "to()" function I determine name of the destination email address. Then I use "send()" which takes a Mailable object as I discuss later.
+
+#### Mailable class
+
+
+
+
 
 
 
