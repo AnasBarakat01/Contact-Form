@@ -72,7 +72,7 @@ Use the following command to create it  `php artisan make:mail ContactMail`
 * or use the **build()** function to determine the previous attributes.     
 
 ### 4 - view file
-
+Is a file of extension ".blade.php" located in the "viwes" folder as default in Laravel. This file is the message that will be sent, you can design it as you want. our file in this tutorial is named "send".
 
 
 
