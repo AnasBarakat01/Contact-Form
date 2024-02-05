@@ -3,7 +3,7 @@
 [Introduction](#Introduction)          
 [Definition](#Definition)                 
 [Advantages](#Advantages)    
-[Steps](#Steos)  
+[Steps](#Steps)  
 [Installation](#Installation)
 
 
