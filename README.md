@@ -38,7 +38,8 @@ any other purposes. Example:
 ![single-directory-contact-5](https://github.com/AnasBarakat01/Contact-Form/assets/155667484/a5866dfa-267d-4810-a0fd-49addbfc7e51)
 
 ## Steps       
-Here are the steps to create Contact-Form using **PHP** and **Laravel** framework.     
+Here are the steps to create Contact-Form using **PHP** and **Laravel** framework.       
+First you have to design your contact-form containing fields where the user enter his data.
 ### 1 - Migration    
 I used migration ,provided from Laravel, to create the table of the Contact-Form in the database.     
 As you can see I created table clled "contacts". This table will include the emails sent ,to website owners, through this form.    
@@ -74,6 +75,7 @@ Use the following command to create it  `php artisan make:mail ContactMail`
 ### 4 - view file
 Is a file of extension ".blade.php" located in the "viwes" folder as default in Laravel. This file is the message that will be sent, you can design it as you want. our file in this tutorial is named "send".
 
+### 5 - controller
 
 
 
