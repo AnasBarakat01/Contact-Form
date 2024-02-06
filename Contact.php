@@ -15,7 +15,6 @@ class Contact extends Model
     public $fillable = ['name', 'email', 'subject', 'message','phone', 'purpose'];
 
 
-
     public static function boot() {
   
         parent::boot();
