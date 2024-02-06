@@ -78,8 +78,19 @@ Is a file of extension ".blade.php" located in the "viwes" folder as default in 
 ### 5 - controller
 Here I put some validation to prevent frequent submissions of the form with the same data to minimize the load on my serve and database.      
 * Deactivate the submit button while submitting the form. this is done using a JavaScript button called "onsubmit" as following `<form  onsubmit= "button.disable= true; return true;>`
-* Compare the previously submitted data with the new one. If they are the same, the form will not be submitted and tell user that this data has already been submitted before. I store the previously submitted data in the Laravel Sessions.  
-      
+* Compare the previously submitted data with the new one. If they are the same, the form will not be submitted and tell user that this data has already been submitted before. I store the previously submitted data in the Laravel Sessions.
+After that I make validation for the submitted data and store them in the database.
+
+#### SMTP
+
+- I uesd **SMTP** protocol for sending emails.
+- I also used **sendmail server** from Google to send emails. here are steps to connfig your google account for sending mails :     
+              1  Go to your Google account
+              2. Security.   
+              3. 2-step verification     
+              4. App passwords     
+              5. Give name for your application then copy the given password, which consists of 16 digit    
+              6. Configure your website. go to **".env"** file and edit the following variables :  `MAIL_DRIVER=sendmail` `MAIL_HOST=smtp.gmail.com`    `MAIL_PORT=587`    `MAIL_USERNAME=..your gamil account..`     `MAIL_PASSWORD=..given password..`   `MAIL_ENCRYPTION=tls
 
 
 
