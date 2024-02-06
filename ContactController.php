@@ -10,9 +10,9 @@ class ContactController extends Controller
 
     public function store(Request $req)
     {
+        // Compare the previously submitted data with the new one
         if(session('name')==$req->name && session('email')==$req->email && session('phone')==$req->phone && session('subject')==$req->subject && session('message')==$req->message)
         {
-            // echo session('name').session('email').session('phone').session('subject').session('message');
             return  redirect('/#contact')->with(['redundant'=>
                             "This form has already submitted before !!"])->withInput();
         }
