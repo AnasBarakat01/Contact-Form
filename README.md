@@ -76,6 +76,10 @@ Use the following command to create it  `php artisan make:mail ContactMail`
 Is a file of extension ".blade.php" located in the "viwes" folder as default in Laravel. This file is the message that will be sent, you can design it as you want. our file in this tutorial is named "send".
 
 ### 5 - controller
+Here I put some validation to prevent frequent submissions of the form with the same data to minimize the load on my serve and database.      
+* Deactivate the submit button while submitting the form. this is done using a JavaScript button called "onsubmit" as following `<form  onsubmit= "button.disable= true; return true;>`
+* Compare the previously submitted data with the new one. If they are the same, the form will not be submitted and tell user that this data has already been submitted before. I store the previously submitted data in the Laravel Sessions.  
+      
 
 
 
@@ -92,5 +96,6 @@ Is a file of extension ".blade.php" located in the "viwes" folder as default in 
 
 1. create the migration `php artisan make:migration create_contacts_table`
 2. create the model `php artisan make:model Contact`
-3. create the mailable class  `php artisan make:mail ContactMail`  
+3. create the mailable class  `php artisan make:mail ContactMail`
+4. create the controller  `php artisan make:controller ContactController`
 
